@@ -1,0 +1,7 @@
+
+/src/.env
+/src/.env.testing
+/src/.phpunit.result.cache
+/src/vendor
+/src/public/storage
+/docker/mysql/data

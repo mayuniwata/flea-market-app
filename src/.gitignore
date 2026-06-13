@@ -1,6 +1,7 @@
 /src/vendor
 /src/node_modules
 /src/.env
+/src/.env.testing
 /src/storage/*.key
 
 /src/storage/logs
@@ -9,6 +10,10 @@
 /src/storage/framework/views
 
 /src/bootstrap/cache
+
+/src/public/storage
+
+/src/.phpunit.result.cache
 
 .DS_Store
 /.idea

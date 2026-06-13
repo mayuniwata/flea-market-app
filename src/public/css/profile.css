@@ -1,0 +1,83 @@
+.profile-edit {
+    padding-top: 50px;
+}
+
+.profile-edit__title {
+    margin: 0 0 40px;
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.profile-form {
+    width: 550px;
+    margin: 0 auto;
+}
+
+.profile-form__image-area {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    margin-bottom: 35px;
+}
+
+.profile-form__image,
+.profile-form__image-placeholder {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: #d9d9d9;
+    object-fit: cover;
+}
+
+.profile-form__image-button {
+    padding: 8px 18px;
+    border: 2px solid #ff5555;
+    border-radius: 6px;
+    color: #ff5555;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.profile-form__image-input {
+    display: none;
+}
+
+.profile-form__group {
+    margin-bottom: 25px;
+}
+
+.profile-form__label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.profile-form__input {
+    width: 100%;
+    height: 46px;
+    padding: 8px 10px;
+    border: 1px solid #777;
+    border-radius: 3px;
+    font-size: 18px;
+}
+
+.profile-form__button {
+    width: 100%;
+    height: 54px;
+    margin-top: 35px;
+    border: none;
+    border-radius: 4px;
+    background: #ff5555;
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 768px) and (max-width: 850px) {
+    .profile-form {
+        width: 65%;
+    }
+}

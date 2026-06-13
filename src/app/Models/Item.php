@@ -4,6 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Like;
+use App\Models\Purchase;
+use App\Models\Comment;
+use App\Models\Category;
 
 class Item extends Model
 {
@@ -12,11 +16,11 @@ class Item extends Model
     protected $fillable = [
     'user_id',
     'name',
-    'price',
     'brand',
     'description',
-    'image',
+    'price',
     'condition',
+    'image',
 ];
 
     public function likes()
@@ -28,4 +32,19 @@ class Item extends Model
     {
         return $this->hasOne(Purchase::class);
     }
+
+    public function comments()
+{
+    return $this->hasMany(Comment::class);
+}
+
+public function categories()
+{
+    return $this->belongsToMany(Category::class);
+}
+
+public function user()
+{
+    return $this->belongsTo(User::class);
+}
 }

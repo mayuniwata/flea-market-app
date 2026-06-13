@@ -1,0 +1,150 @@
+.purchase {
+    padding: 70px 80px;
+}
+
+.purchase-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 80px;
+}
+
+.purchase__left {
+    width: 100%;
+}
+
+.purchase__item {
+    display: flex;
+    gap: 40px;
+    width: 60%;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #000;
+}
+
+.purchase__image {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+}
+
+.purchase__name {
+    margin: 0;
+    font-size: 28px;
+}
+
+.purchase__price {
+    margin-top: 20px;
+    font-size: 26px;
+}
+
+.purchase-form__group {
+    width: 60%;
+    padding: 35px 0;
+    border-bottom: 1px solid #000;
+}
+
+.purchase-form__label {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.purchase-form__select {
+    display: block;
+    width: 300px;
+    height: 40px;
+    margin: 25px 0 0 40px;
+    padding: 0 10px;
+    font-size: 16px;
+}
+
+.purchase-form__heading {
+    display: flex;
+    justify-content: space-between;
+}
+
+.purchase-form__address-link {
+    color: #0073cc;
+    text-decoration: none;
+}
+
+.purchase-form__address {
+    margin-left: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.8;
+}
+
+.purchase__right {
+    width: 35%;
+}
+
+.purchase__summary {
+    border: 1px solid #000;
+}
+
+.purchase__summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+    border-bottom: 1px solid #000;
+    font-size: 18px;
+}
+
+.purchase__button {
+    width: 100%;
+    margin-top: 50px;
+    padding: 16px 0;
+    border: none;
+    border-radius: 5px;
+    background: #ff5555;
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.purchase-form__group {
+    width: 100%;
+    max-width: 700px;
+}
+
+.purchase-form__address {
+    margin-top: 20px;
+    margin-left: 40px;
+    line-height: 1.8;
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1540px) {
+    .purchase {
+        padding: 70px 70px;
+    }
+
+    .purchase-form {
+        gap: 60px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 850px) {
+    .purchase {
+        padding: 50px 40px;
+    }
+
+    .purchase-form {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .purchase__item,
+    .purchase-form__group {
+        width: 100%;
+        max-width: none;
+    }
+
+    .purchase__right {
+        width: 100%;
+    }
+
+    .purchase__image {
+        width: 160px;
+        height: 160px;
+    }
+}
