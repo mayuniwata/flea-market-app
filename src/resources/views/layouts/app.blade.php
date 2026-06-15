@@ -22,7 +22,7 @@
             >
         </a>
 
-        @if (!request()->is('login') && !request()->is('register'))
+        @if (!request()->is('login') && !request()->is('register') && !request()->is('email/verify'))
 
             <form class="header__search" action="/" method="get">
 

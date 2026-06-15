@@ -150,17 +150,25 @@
 
             <div class="sell-form__group">
 
-                <label class="sell-form__label">
-                    販売価格
-                </label>
+    <label class="sell-form__label">
+        販売価格
+    </label>
 
-                <input
-                    class="sell-form__input"
-                    type="number"
-                    name="price"
-                >
+    <div class="sell-form__price">
 
-            </div>
+        <span class="sell-form__yen">
+            ¥
+        </span>
+
+        <input
+            class="sell-form__input sell-form__price-input"
+            type="number"
+            name="price"
+        >
+
+    </div>
+
+</div>
 
         </div>
 

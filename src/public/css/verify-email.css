@@ -1,50 +1,92 @@
 .verify-email {
-    max-width: 680px;
-    margin: 80px auto;
-    padding: 48px 56px;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 220px 20px;
     text-align: center;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    background: #fff;
 }
 
 .verify-email__title {
-    margin-bottom: 24px;
-    font-size: 28px;
-    font-weight: bold;
+    display: none;
 }
 
 .verify-email__text {
-    margin-bottom: 32px;
-    font-size: 16px;
-    line-height: 1.8;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1.5;
+    margin-bottom: 70px;
 }
 
 .verify-email__link {
     display: inline-block;
-    margin-bottom: 24px;
-    padding: 12px 40px;
-    border: 1px solid #ff5555;
-    border-radius: 6px;
-    color: #ff5555;
-    font-size: 18px;
-    font-weight: bold;
+    padding: 18px 45px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background: #f5f5f5;
+    color: #000;
     text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.verify-email form {
+    margin-top: 60px;
 }
 
 .verify-email__button {
-    padding: 12px 40px;
     border: none;
-    border-radius: 6px;
-    background: #ff5555;
-    color: #fff;
-    font-size: 16px;
-    font-weight: bold;
+    background: none;
+    color: #0073cc;
+    font-size: 20px;
     cursor: pointer;
 }
 
+.verify-email__button:hover {
+    text-decoration: underline;
+}
+
 .verify-email__message {
-    margin-bottom: 20px;
-    color: #ff5555;
-    font-weight: bold;
+    color: green;
+    margin-top: 20px;
+}
+/* タブレット対応 */
+@media screen and (min-width: 768px) and (max-width: 850px) {
+
+    .verify-email {
+        max-width: 90%;
+        margin: 180px auto;
+    }
+
+    .verify-email__text {
+        font-size: 22px;
+    }
+
+    .verify-email__link {
+        font-size: 20px;
+        padding: 16px 35px;
+    }
+
+    .verify-email__button {
+        font-size: 18px;
+    }
+}
+
+/* PC対応 */
+@media screen and (min-width: 1400px) and (max-width: 1540px) {
+
+    .verify-email {
+        max-width: 700px;
+        margin: 220px auto;
+    }
+
+    .verify-email__text {
+        font-size: 28px;
+    }
+
+    .verify-email__link {
+        font-size: 24px;
+    }
+
+    .verify-email__button {
+        font-size: 20px;
+    }
 }

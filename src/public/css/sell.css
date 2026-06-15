@@ -118,6 +118,24 @@
     cursor: pointer;
 }
 
+.sell-form__price {
+    position: relative;
+    width: 100%;
+}
+
+.sell-form__yen {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.sell-form__price-input {
+    padding-left: 35px;
+}
+
 /* タブレット対応 */
 @media screen and (min-width: 768px) and (max-width: 850px) {
 
