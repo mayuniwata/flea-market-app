@@ -8,6 +8,7 @@
 
 - 会員登録
 - ログイン / ログアウト
+- メール認証
 - 商品一覧表示
 - 商品検索
 - 商品詳細表示
@@ -37,17 +38,12 @@ cp .env.example .env
 php artisan key:generate
 ```
 
-### マイグレーション
+### マイグレーション・シーディング
 
 ```bash
-php artisan migrate
+php artisan migrate:fresh --seed
 ```
 
-### シーディング
-
-```bash
-php artisan db:seed
-```
 ## 使用技術
 
 - PHP 8.1
@@ -57,19 +53,25 @@ php artisan db:seed
 - Docker
 - Laravel Fortify
 - PHPUnit
+- MailHog
 
 ## テスト
 
 ```bash
 php artisan test
 ```
+全テスト成功確認済み
 
-37件のテストが成功しています。
+
+## メール認証
+
+会員登録後、MailHogで認証メールを確認できます。
+
+- MailHog：http://localhost:8025
 
 ## ログイン情報
 
 管理者ユーザーは実装していません。
-
 
 ### 一般ユーザー
 
@@ -85,8 +87,13 @@ test@example.com
 password
 ```
 
+## URL
+
+- 開発環境：http://localhost
+- phpMyAdmin：http://localhost:8080
+- MailHog：http://localhost:8025
+
 ## ER図
 
 ![ER図](./images/ER.png)
-
 
