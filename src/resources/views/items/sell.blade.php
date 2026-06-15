@@ -20,6 +20,7 @@
     >
 
         @csrf
+        
 
         <div class="sell-form__group">
 
@@ -40,6 +41,9 @@
                 >
 
             </label>
+            @error('image')
+            <p class="sell-form__error">{{ $message }}</p>
+            @enderror
 
         </div>
 
@@ -77,6 +81,10 @@
                     @endforeach
 
                 </div>
+                @error('categories')
+                <p class="sell-form__error">{{ $message }}</p>
+                @enderror
+
 
             </div>
 
@@ -96,6 +104,10 @@
                     <option value="やや傷や汚れあり">やや傷や汚れあり</option>
                     <option value="状態が悪い">状態が悪い</option>
                 </select>
+
+                @error('condition')
+                <p class="sell-form__error">{{ $message }}</p>
+                @enderror
 
             </div>
 
@@ -118,6 +130,9 @@
                     type="text"
                     name="name"
                 >
+                @error('name')
+                <p class="sell-form__error">{{ $message }}</p>
+                @enderror
 
             </div>
 
@@ -145,6 +160,9 @@
                     class="sell-form__textarea"
                     name="description"
                 ></textarea>
+                @error('description')
+                <p class="sell-form__error">{{ $message }}</p>
+                @enderror
 
             </div>
 
@@ -165,9 +183,12 @@
             type="number"
             name="price"
         >
+        
 
     </div>
-
+        @error('price')
+        <p class="sell-form__error">{{ $message }}</p>
+        @enderror
 </div>
 
         </div>

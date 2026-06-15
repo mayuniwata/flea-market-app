@@ -136,6 +136,14 @@
     padding-left: 35px;
 }
 
+.sell-form__error {
+    margin-top: 5px;
+    color: #ff5555;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
 /* タブレット対応 */
 @media screen and (min-width: 768px) and (max-width: 850px) {
 
