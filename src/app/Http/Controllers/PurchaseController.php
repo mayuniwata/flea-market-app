@@ -53,6 +53,13 @@ class PurchaseController extends Controller
         return redirect($session->url);
     }
 
+    public function editAddress($item_id)
+{
+    $item = Item::findOrFail($item_id);
+
+    return view('purchase.address', compact('item'));
+}
+
     public function updateAddress(Request $request, $item_id)
 {
     session([

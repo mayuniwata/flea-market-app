@@ -1,11 +1,8 @@
 .purchase {
-    padding: 70px 80px;
-}
-
-.purchase-form {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    max-width: 1200px;
+    margin: 70px auto;
+    display: grid;
+    grid-template-columns: 1fr 320px;
     gap: 80px;
 }
 
@@ -13,138 +10,136 @@
     width: 100%;
 }
 
+.purchase__right {
+    width: 100%;
+}
+
 .purchase__item {
     display: flex;
     gap: 40px;
-    width: 60%;
     padding-bottom: 40px;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #5f5f5f;
 }
 
 .purchase__image {
-    width: 180px;
-    height: 180px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
+    background: #ddd;
 }
 
 .purchase__name {
-    margin: 0;
+    margin: 0 0 20px;
     font-size: 28px;
+    font-weight: bold;
 }
 
 .purchase__price {
-    margin-top: 20px;
-    font-size: 26px;
+    margin: 0;
+    font-size: 24px;
 }
 
 .purchase-form__group {
-    width: 60%;
-    padding: 35px 0;
-    border-bottom: 1px solid #000;
+    padding: 32px 28px;
+    border-bottom: 1px solid #5f5f5f;
 }
 
 .purchase-form__label {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
 }
 
 .purchase-form__select {
     display: block;
-    width: 300px;
-    height: 40px;
-    margin: 25px 0 0 40px;
+    width: 250px;
+    height: 36px;
+    margin-top: 28px;
+    margin-left: 40px;
     padding: 0 10px;
-    font-size: 16px;
 }
 
 .purchase-form__heading {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .purchase-form__address-link {
     color: #0073cc;
+    font-size: 14px;
     text-decoration: none;
 }
 
 .purchase-form__address {
+    margin-top: 28px;
     margin-left: 40px;
     font-size: 18px;
     font-weight: bold;
     line-height: 1.8;
 }
 
-.purchase__right {
-    width: 35%;
-}
-
 .purchase__summary {
-    border: 1px solid #000;
+    border: 1px solid #5f5f5f;
 }
 
 .purchase__summary-row {
+    min-height: 90px;
+    padding: 24px;
     display: flex;
     justify-content: space-between;
-    padding: 25px;
-    border-bottom: 1px solid #000;
+    align-items: center;
+    border-bottom: 1px solid #5f5f5f;
+}
+
+.purchase__summary-row:last-child {
+    border-bottom: none;
+}
+
+.purchase__summary-label {
+    margin: 0;
+    font-size: 16px;
+}
+
+.purchase__summary-value {
+    margin: 0;
     font-size: 18px;
 }
 
 .purchase__button {
     width: 100%;
+    height: 56px;
     margin-top: 50px;
-    padding: 16px 0;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     background: #ff5555;
     color: #fff;
     font-size: 22px;
     font-weight: bold;
-}
-
-.purchase-form__group {
-    width: 100%;
-    max-width: 700px;
-}
-
-.purchase-form__address {
-    margin-top: 20px;
-    margin-left: 40px;
-    line-height: 1.8;
-}
-
-@media screen and (min-width: 1400px) and (max-width: 1540px) {
-    .purchase {
-        padding: 70px 70px;
-    }
-
-    .purchase-form {
-        gap: 60px;
-    }
+    cursor: pointer;
 }
 
 @media screen and (min-width: 768px) and (max-width: 850px) {
     .purchase {
-        padding: 50px 40px;
-    }
-
-    .purchase-form {
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    .purchase__item,
-    .purchase-form__group {
-        width: 100%;
-        max-width: none;
-    }
-
-    .purchase__right {
-        width: 100%;
+        max-width: 760px;
+        grid-template-columns: 1fr 260px;
+        gap: 32px;
     }
 
     .purchase__image {
-        width: 160px;
-        height: 160px;
+        width: 120px;
+        height: 120px;
+    }
+
+    .purchase__name {
+        font-size: 24px;
+    }
+
+    .purchase__price {
+        font-size: 22px;
+    }
+
+    .purchase-form__select,
+    .purchase-form__address {
+        margin-left: 20px;
     }
 }

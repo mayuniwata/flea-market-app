@@ -6,7 +6,9 @@
 
 @section('content')
 
-<div class="purchase">
+<form class="purchase" action="/purchase/{{ $item->id }}" method="post">
+    @csrf
+
     <div class="purchase__left">
         <div class="purchase__item">
             <img class="purchase__image" src="{{ $item->image }}" alt="{{ $item->name }}">
@@ -17,69 +19,54 @@
             </div>
         </div>
 
-        <form class="purchase-form" action="/purchase/{{ $item->id }}" method="post">
-            @csrf
+        <div class="purchase-form__group">
+            <label class="purchase-form__label">支払い方法</label>
 
-            <div class="purchase-form__group">
-                <label class="purchase-form__label">支払い方法</label>
+            <select class="purchase-form__select" name="payment_method" id="payment-method-select">
+                <option value="">選択してください</option>
+                <option value="コンビニ支払い">コンビニ支払い</option>
+                <option value="カード支払い">カード支払い</option>
+            </select>
+        </div>
 
-                <select class="purchase-form__select" name="payment_method" id="payment-method-select">
-                    <option value="">選択してください</option>
-                    <option value="コンビニ支払い">コンビニ支払い</option>
-                    <option value="カード支払い">カード支払い</option>
-                </select>
+        <div class="purchase-form__group">
+            <div class="purchase-form__heading">
+                <label class="purchase-form__label">配送先</label>
+                <a class="purchase-form__address-link" href="/purchase/address/{{ $item->id }}">
+                    変更する
+                </a>
             </div>
 
-            <div class="purchase-form__group">
-                <div class="purchase-form__heading">
-                    <label class="purchase-form__label">配送先</label>
-                    <a class="purchase-form__address-link" href="/purchase/address/{{ $item->id }}">変更する</a>
-                </div>
-                <input
-    type="hidden"
-    name="postcode"
-    value="{{ session('postcode', '〒000-0000') }}"
->
+            <input type="hidden" name="postcode" value="{{ session('postcode', '〒000-0000') }}">
+            <input type="hidden" name="address" value="{{ session('address', '東京都渋谷区') }}">
+            <input type="hidden" name="building" value="{{ session('building', 'テストマンション101') }}">
 
-<input
-    type="hidden"
-    name="address"
-    value="{{ session('address', '東京都渋谷区') }}"
->
-
-<input
-    type="hidden"
-    name="building"
-    value="{{ session('building', 'テストマンション101') }}"
->
-
-<p class="purchase-form__address">
-    {{ session('postcode', '〒000-0000') }}<br>
-    {{ session('address', '東京都渋谷区') }}<br>
-    {{ session('building', 'テストマンション101') }}
-</p>
-
-                
-            </div>
-
-            <div class="purchase__right">
-                <div class="purchase__summary">
-                    <div class="purchase__summary-row">
-                        <p>商品代金</p>
-                        <p>¥{{ number_format($item->price) }}</p>
-                    </div>
-
-                    <div class="purchase__summary-row">
-                        <p>支払い方法</p>
-                        <p id="payment-method-text">選択してください</p>
-                    </div>
-                </div>
-
-                <button class="purchase__button" type="submit">購入する</button>
-            </div>
-        </form>
+            <p class="purchase-form__address">
+                {{ session('postcode', '〒000-0000') }}<br>
+                {{ session('address', '東京都渋谷区') }}<br>
+                {{ session('building', 'テストマンション101') }}
+            </p>
+        </div>
     </div>
-</div>
+
+    <div class="purchase__right">
+        <div class="purchase__summary">
+            <div class="purchase__summary-row">
+                <p class="purchase__summary-label">商品代金</p>
+                <p class="purchase__summary-value">¥{{ number_format($item->price) }}</p>
+            </div>
+
+            <div class="purchase__summary-row">
+                <p class="purchase__summary-label">支払い方法</p>
+                <p class="purchase__summary-value" id="payment-method-text">選択してください</p>
+            </div>
+        </div>
+
+        <button class="purchase__button" type="submit">
+            購入する
+        </button>
+    </div>
+</form>
 
 <script>
     const select = document.getElementById('payment-method-select');
